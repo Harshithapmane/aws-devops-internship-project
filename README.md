@@ -102,6 +102,7 @@ In practice this ran inside AWS CodeBuild via `buildspec.yaml`, triggered automa
 - **Amazon DynamoDB** — application data store
 - **Application Load Balancer** — path-based routing across two services
 - **EC2 Auto Scaling** — scheduled scale-up/scale-down aligned to business hours
+- **Amazon Route 53 & SES** — DNS routing and application email
 
 ---
 *A complete infra-plus-application CI/CD build, from a hands-on AWS DevOps internship.*
