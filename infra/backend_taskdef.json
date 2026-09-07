@@ -1,0 +1,26 @@
+[
+  {
+    "name": "springboot",
+    "image": "<your-account-id>.dkr.ecr.us-east-1.amazonaws.com/hci-aws-dev-ecr-backend",
+    "cpu": 0,
+    "portMappings": [
+      {
+        "name": "springboot-app-80-tcp",
+        "containerPort": 80,
+        "hostPort": 80,
+        "protocol": "tcp",
+        "appProtocol": "http"
+      }
+    ],
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-create-group": "true",
+        "awslogs-group": "/ecs/task-def-angular",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]

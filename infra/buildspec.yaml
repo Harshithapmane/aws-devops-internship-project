@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - "wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_arm64.zip"
+      - "unzip terraform_1.1.8_linux_arm64.zip"
+      - "mv terraform /usr/local/bin/"
+
+  pre_build:
+    commands:
+      - terraform init
+
+  build:
+    commands:
+      - terraform plan
+      - terraform apply -var-file="dev.tfvars" -auto-approve
+
+  post_build:
+    commands:
+      - echo "terraform apply completed on `date`"
